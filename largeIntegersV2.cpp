@@ -28,7 +28,6 @@ int main() {
     vector<int> result(MAX_DIGITS);
     string input1, input2;
     char op;
-    int numDigits;
 
     cout << "Author: Ali Mortada" << endl;
 
