@@ -37,25 +37,12 @@ int main() {
     // Set number of digits based on input
     numDigits = input.size();
 
-    /*
-    // Fill in rest of input with zeroes
-    for (int i = input.size(); i < MAX_DIGITS; i++) {
-        input.push_back('0');
-    }
-    
-    // Enter each digit as an element in vector a
-    for (int i = 0; i < input.size(); i++) {
-        a.push_back(input.at(i) - '0');
-    }
-    */
-
     // Fill in input backwards into the vector
     int j = 0;
     for (int i = numDigits - 1; i >= 0; i--, j++) {
         a.at(i) = input.at(j) - '0';
     }
     
-
     // Output digits to user
     cout << "Digits: ";
     for (int i = 0; i < a.size(); i++) {
