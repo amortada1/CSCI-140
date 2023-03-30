@@ -63,20 +63,24 @@ void stringToVector(string input, vector<int>& num) {
 
 // Add vector 1 and 2 together
 bool addOperands(vector<int>& num1, vector<int>& num2, vector<int>& result, int numDigits1, int numDigits2) {
-    // If size of operands is greater than 25, terminate program
-    if (numDigits1 + numDigits2 > MAX_DIGITS) {
-        return false;
-    }
-    
+    int carry;
     for (int i = 0; i < MAX_DIGITS; i++) {
         // If digits add up to less than 10, simply add. Otherwise, carry the 1.
         if (result.at(i) + num1.at(i) + num2.at(i) < 10) {
             result.at(i) += num1.at(i) + num2.at(i);
+            carry = 0;
         } else {
             result.at(i) = (result.at(i) + num1.at(i) + num2.at(i)) % 10;
-            result.at(i + 1) = 1;
+            // If next index is valid, carry the 1
+            if (i + 1 < MAX_DIGITS)
+                result.at(i + 1) = 1;
+            carry = 1; 
         }
+        // If on the 25th digit and carry is 1, terminate program
+        if (i == 24 && carry == 1)
+            return false;
     }
+
     return true;
 }
 
@@ -89,7 +93,7 @@ void outputLargeInteger(string input1, string input2, vector<int>& result, bool 
     }
     // Erase leading zeros
     resultString.erase(0, resultString.find_first_not_of('0'));
-
+    
     // Output results
     cout << input1 << " + " << input2 << " = ";
     // If operands were valid, output result. If not, output "overflow"
