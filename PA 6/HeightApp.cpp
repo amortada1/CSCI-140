@@ -3,7 +3,8 @@
     Author: Ali Mortada
     Class: CSCI 140
     Date: 4/6/23
-    Description: 
+    Description: Driver program for Height class. Stores height as feet and inches in a class.
+    Can also print stored height and adjust height by adding one inch.
     I certify that the code below is my own work.
     Exception(s): N/A
 */
