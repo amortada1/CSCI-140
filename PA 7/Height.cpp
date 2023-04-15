@@ -26,6 +26,20 @@ bool Height::operator==(const Height &r) const {
     return false;
 }
 
+// Operator overload for <, allows two heights to be compared
+bool Height::operator<(const Height &r) const {
+    if (feet < r.feet && inches < r.inches) {
+        return true;
+    }
+    return false;
+}
+
+// Operator overload for <<, allows printing for heights
+ostream& operator<<(ostream& os, const Height &r) {
+    os << r.feet << "' " << r.inches << "\" (" << r.totalInches() << " inches)" << endl;
+    return os;
+}
+
 // Mutator for feet data member
 void Height::setFeet(int userFeet) {
     if (userFeet >= 0)

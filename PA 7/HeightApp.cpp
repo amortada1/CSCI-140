@@ -4,7 +4,8 @@
     Class: CSCI 140
     Date: 4/15/23
     Description: Driver program for Height class. Stores height as feet and inches in a class.
-    Can also print stored height and adjust height by up to 12 inches.
+    Can also print stored height and adjust height by up to 12 inches. Operators overloaded include 
+    ==, <, and <<, allowing comparison of two objects and stream insertion.
     I certify that the code below is my own work.
     Exception(s): N/A
 */
@@ -72,6 +73,19 @@ int main() {
         cout << "h3 is not the same as h6" << endl;
     }
     // Should output "h3 is not the same as h6"
+
+    // h3 is 5' 10" and h6 is 1' 8"
+    if (h3 < h6) {
+        cout << "h3 is less than h6" << endl;
+    } else if (h3 == h6){
+        cout << "h3 is equal to h6" << endl;
+    } else {
+        cout << "h3 is greater than h6" << endl;
+    }
+    // Should output: "h3 is greater than h6"
+
+    cout << "h3: " << h3 << endl;    // h3: 5' 10" (70 inches)
+    cout << "h6: " << h6 << endl;    // h6: 1' 8" (20 inches)
 
     return 0;
 }

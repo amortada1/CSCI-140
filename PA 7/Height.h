@@ -8,6 +8,8 @@ class Height {
     public:
         Height(int userFeet, int userInches);
         bool operator==(const Height &r) const;
+        bool operator<(const Height &r) const;
+        friend ostream& operator<<(ostream& os, const Height &r);
 
         void setFeet(int userFeet);
         void setInches(int userInches);
