@@ -19,8 +19,8 @@ int recFind(const int a[], int key, int start, int n) {
         return -1;
     }
     // If value is equal to key, return index of found value 
-    else if (a[start + 1] == key) {
-        return start + 1;
+    else if (a[start] == key) {
+        return start;
     }
     // Else, recursively call function to keep searching
     return recFind(a, key, start + 1, n);    
@@ -35,6 +35,8 @@ int main() {
     cout << "Index of 2 : " << recFind(values, 2, 0, 7) << endl;   //  3
     cout << "Index of 1 : " << recFind(values, 1, 0, 7) << endl;   // -1
     cout << "Index of 15: " << recFind(values, 15, 0, 7) << endl;  //  6
+    cout << "Index of 5 : " << recFind(values, 5, 0, 7) << endl;   //  0
+
 
     return 0;
 }
