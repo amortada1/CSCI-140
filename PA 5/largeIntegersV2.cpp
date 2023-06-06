@@ -27,6 +27,7 @@ int main() {
     vector<int> num2(MAX_DIGITS);
     vector<int> result(MAX_DIGITS);
     string input1, input2;
+    bool isValid;
     char op;
 
     cout << "Author: Ali Mortada" << endl;
@@ -45,8 +46,11 @@ int main() {
     stringToVector(input1, num1);
     stringToVector(input2, num2);
     
-    // Add operands, then output result
-    outputLargeInteger(input1, input2, result, addOperands(num1, num2, result, input1.size(), input2.size()));
+    // Add operands, making sure they are valid
+    isValid = addOperands(num1, num2, result, input1.size(), input2.size());
+    
+    // Output result
+    outputLargeInteger(input1, input2, result, isValid);
 
     return 0;
 }
